@@ -8,20 +8,20 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_python3.7.____cpython:
-        CONFIG: osx_64_python3.7.____cpython
+      osx_64_python3.7._:
+        CONFIG: osx_64_python3.7._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.8.____cpython:
-        CONFIG: osx_64_python3.8.____cpython
+      osx_64_python3.8._:
+        CONFIG: osx_64_python3.8._
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.9.____cpython:
-        CONFIG: osx_64_python3.9.____cpython
+      osx_64_python3.9._:
+        CONFIG: osx_64_python3.9._
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_python3.8.____cpython:
-        CONFIG: osx_arm64_python3.8.____cpython
+      osx_arm64_python3.8._:
+        CONFIG: osx_arm64_python3.8._
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_python3.9.____cpython:
-        CONFIG: osx_arm64_python3.9.____cpython
+      osx_arm64_python3.9._:
+        CONFIG: osx_arm64_python3.9._
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 

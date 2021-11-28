@@ -28,7 +28,6 @@ export TF_SYSTEM_LIBS="
   astunparse_archive
   boringssl
   com_github_googlecloudplatform_google_cloud_cpp
-  com_github_grpc_grpc
   com_google_protobuf
   curl
   cython
@@ -37,17 +36,26 @@ export TF_SYSTEM_LIBS="
   gast_archive
   gif
   icu
+  jsoncpp_git
   libjpeg_turbo
+  nasm
+  nsync
+  opt_einsum_archive
   org_sqlite
+  pasta
   png
   pybind11
+  six_archive
   snappy
+  termcolor_archive
+  typing_extensions_archive
+  wrapt
   zlib
   "
-sed -i -e "s/GRPCIO_VERSION/${grpc_cpp}/" tensorflow/tools/pip_package/setup.py
+#sed -i -e "s/GRPCIO_VERSION/${grpc_cpp}/" tensorflow/tools/pip_package/setup.py
 
 # do not build with MKL support
-export TF_NEED_MKL=0
+export TF_NEED_MKL=1
 export BAZEL_MKL_OPT=""
 
 mkdir -p ./bazel_output_base
@@ -77,16 +85,19 @@ BUILD_OPTS="
     --logging=6
     --verbose_failures
     --config=opt
+	--config=mkl
     --define=PREFIX=${PREFIX}
     --define=PROTOBUF_INCLUDE_PATH=${PREFIX}/include
     --config=noaws
-    --cpu=${TARGET_CPU}"
+    --cpu=${TARGET_CPU}
+	--local_ram_resources=2048
+	"
 
 if [[ "${target_platform}" == "osx-arm64" ]]; then
   BUILD_OPTS="${BUILD_OPTS} --config=macos_arm64"
 fi
 export TF_ENABLE_XLA=0
-export BUILD_TARGET="//tensorflow/tools/pip_package:build_pip_package //tensorflow/tools/lib_package:libtensorflow //tensorflow:libtensorflow_cc.so"
+export BUILD_TARGET="//tensorflow/tools/pip_package:build_pip_package //tensorflow:libtensorflow_cc.so"
 
 # Python settings
 export PYTHON_BIN_PATH=${PYTHON}
@@ -115,7 +126,7 @@ if [[ ${cuda_compiler_version} != "None" ]]; then
     export GCC_HOST_COMPILER_PATH="${GCC}"
     export GCC_HOST_COMPILER_PREFIX="$(dirname ${GCC})"
 
-    export TF_CUDA_PATHS="${PREFIX},${CUDA_HOME}"
+    export TF_CUDA_PATHS="${PREFIX},/usr/local/cuda,/usr"
     export TF_NEED_CUDA=1
     export TF_CUDA_VERSION="${cuda_compiler_version}"
     export TF_CUDNN_VERSION="${cudnn}"
@@ -131,6 +142,8 @@ if [[ ${cuda_compiler_version} != "None" ]]; then
     elif [[ ${cuda_compiler_version} == 11.1 ]]; then
         export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
     elif [[ ${cuda_compiler_version} == 11.2 ]]; then
+        export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
+    elif [[ ${cuda_compiler_version} == 11.3 ]]; then
         export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
     else
         echo "unsupported cuda version."
@@ -151,7 +164,7 @@ mkdir -p $SRC_DIR/tensorflow_pkg
 bash -x bazel-bin/tensorflow/tools/pip_package/build_pip_package $SRC_DIR/tensorflow_pkg
 
 if [[ "${target_platform}" == linux-* ]]; then
-  cp $SRC_DIR/bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz $SRC_DIR
+  #cp $SRC_DIR/bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz $SRC_DIR
   mkdir -p $SRC_DIR/libtensorflow_cc_output/lib
   cp -d bazel-bin/tensorflow/libtensorflow_cc.so* $SRC_DIR/libtensorflow_cc_output/lib/
   cp -d bazel-bin/tensorflow/libtensorflow_framework.so* $SRC_DIR/libtensorflow_cc_output/lib/

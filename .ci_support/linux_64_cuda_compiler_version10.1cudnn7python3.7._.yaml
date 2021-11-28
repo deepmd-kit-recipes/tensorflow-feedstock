@@ -1,46 +1,58 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+abseil_cpp:
+- '20210324.2'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '11'
+- '7'
+cdt_name:
+- cos7
 channel_sources:
-- conda-forge
+- deepmodeling,https://deepmodeling.njzjz.win,defaults
 channel_targets:
-- conda-forge main
+- deepmodeling main
+cuda_compiler:
+- nvcc
 cuda_compiler_version:
-- None
+- '10.1'
+cudnn:
+- '7'
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '11'
+- '7'
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-cuda:10.1
 giflib:
 - '5.2'
-grpc_cpp:
-- '1.42'
 icu:
-- '69'
+- '68'
 jpeg:
 - '9'
+jsoncpp:
+- 1.9.4
 libcurl:
 - '7'
 libpng:
 - '1.6'
 libprotobuf:
-- '3.18'
-macos_machine:
-- arm64-apple-darwin20.0.0
+- '3.14'
+nccl:
+- '2'
 numpy:
-- '1.19'
+- '1.20'
 openssl:
 - 1.1.1
 pin_run_as_build:
   jpeg:
     max_pin: x
+  jsoncpp:
+    max_pin: x.x.x
   libcurl:
     max_pin: x
   libpng:
     max_pin: x.x
+  openssl:
+    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
@@ -49,16 +61,20 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.7.*
 snappy:
 - '1'
 sqlite:
 - '3'
 target_platform:
-- osx-arm64
+- linux-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - cudnn
+  - cuda_compiler_version
+  - cdt_name
+  - docker_image
 - - python
   - numpy
 zlib:

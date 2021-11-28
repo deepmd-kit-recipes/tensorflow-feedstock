@@ -12,7 +12,7 @@ source:
       - patches/0002-skip-read-only-debugger_cli_common-test.patch
       - patches/0003-relax-precision-in-matrix_log_op_test.patch
       # requires setting GRPCIO_VERSION in build script
-      - patches/0004-Fixup-requirements.patch
+      #- patches/0004-Fixup-requirements.patch
       - patches/0005-Replace-deprecated-absl-Status-error_message-call-wi.patch
   - url: https://github.com/tensorflow/estimator/archive/refs/tags/v{{ version }}.tar.gz
     sha256: e5164e802638d3cf110ecc17912be9d514a9d3354ec48e77200b9403dcc15965
@@ -32,7 +32,7 @@ requirements:
     - {{ compiler('cuda') }}                 # [cuda_compiler_version != "None"]
     - bazel
     - bazel >=4.2.1  # [osx and arm64]
-    - grpc-cpp
+    #- grpc-cpp
     - libprotobuf
     - nasm
     - sed
@@ -62,10 +62,11 @@ requirements:
     - cython
     - dill
     - giflib
-    - grpc-cpp
+    #- grpc-cpp
     - flatbuffers
     - icu
     - jpeg
+    - jsoncpp
     - libpng
     - libprotobuf
     - openssl
@@ -73,6 +74,7 @@ requirements:
     - sqlite
     - snappy
     - zlib
+    - abseil-cpp
     # requirements specified by the package itself, see
     # github.com/tensorflow/tensorflow/blob/v{{ version }}/tensorflow/tools/pip_package/setup.py
     - absl-py >=0.4.0
@@ -136,10 +138,12 @@ outputs:
         - cython
         - dill
         - giflib
-        - grpc-cpp
+        #- grpc-cpp
+        - abseil-cpp
         - flatbuffers
         - icu
         - jpeg
+        - jsoncpp
         - libcurl
         - libpng
         - libprotobuf
@@ -175,7 +179,7 @@ outputs:
         - astunparse >=1.6.0
         - gast >=0.2.1,<0.5.0
         - google-pasta >=0.1.1
-        - grpcio {{ grpc_cpp }}.*
+        - grpcio >=1.24.3,<2.0 
         - h5py >=2.9.0
         - keras-preprocessing >=1.1.1
         - {{ pin_compatible('numpy') }}
@@ -205,25 +209,6 @@ outputs:
         - tflite_convert --help     # [not win]
         - toco_from_protos --help   # [not win]
         - toco --help               # [not win]
-
-  # compatibility output wrapping core package, since tensorflow-base
-  # was used as an output before 2.7 (should we add a deprecation warning?)
-  - name: tensorflow-base
-    requirements:
-      host:
-        - python
-        - openssl
-        - {{ pin_subpackage('tensorflow', exact=True) }}
-      run:
-        - python
-        - {{ pin_subpackage('tensorflow', exact=True) }}
-    test:
-      requires:
-        - pip
-      imports:
-        - tensorflow
-      commands:
-        - pip check
 
   - name: tensorflow-estimator
     script: build_estimator.sh   # [not win]
@@ -257,52 +242,8 @@ outputs:
     test:
       requires:
         - pip
-      commands:
-        - pip check
-
-  - name: libtensorflow
-    script: cp_libtensorflow.sh
-    build:
-      skip: true  # [not linux]
-      string: cuda{{ cuda_compiler_version | replace('.', '') }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != "None"]
-      string: cpu_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version == "None"]
-      run_exports:
-        # tensorflow makes no ABI guarantees, need to pin to what we built with
-        - libtensorflow {{ version }}
-    requirements:
-      # build requirements needs to pick up the compiler run_exports
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        # Keep the cuda compiler here since it helps package solvers
-        # decide on the cuda variant
-        # https://github.com/conda-forge/tensorflow-feedstock/issues/162
-        - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
-      # host requirements to pick up run_exports
-      host:
-        - giflib
-        - grpc-cpp
-        - icu
-        - jpeg
-        - libcurl
-        - libpng
-        - libprotobuf
-        - openssl
-        - snappy
-        - sqlite
-        - zlib
-      run:
-        # avoid that people without GPUs needlessly download ~200-300MB
-        - __cuda  # [cuda_compiler_version != "None"]
-    test:
-      files:
-        - test_libtensorflow.sh
-        - test_c.c
-      requires:
-        - {{ compiler('c') }}
-      commands:
-        - test -f $PREFIX/lib/libtensorflow.so  # [not win and cuda_compiler_version == "None"]
-        - ./test_libtensorflow.sh               # [not win and cuda_compiler_version == "None"]
+      #commands:
+        #- pip check
 
   - name: libtensorflow_cc
     script: cp_libtensorflow_cc.sh
@@ -325,9 +266,11 @@ outputs:
       # host requirements to pick up run_exports
       host:
         - giflib
-        - grpc-cpp
+        #- grpc-cpp
+        - abseil-cpp
         - icu
         - jpeg
+        - jsoncpp
         - libcurl
         - libpng
         - libprotobuf
@@ -337,6 +280,7 @@ outputs:
         - zlib
       run:
         # avoid that people without GPUs needlessly download ~200-300MB
+        - intel-openmp
         - __cuda  # [cuda_compiler_version != "None"]
     test:
       files:
@@ -346,24 +290,7 @@ outputs:
         - {{ compiler('cxx') }}
       commands:
         - test -f $PREFIX/lib/libtensorflow_cc.so  # [not win and cuda_compiler_version == "None"]
-        - ./test_libtensorflow_cc.sh               # [not win and cuda_compiler_version == "None"]
-
-  # 2021/08/01, hmaarrfk
-  # While this seems like a roundabout way of defining the package name
-  # It helps the linter avoid errors on a package not having tests.
-  {% set tensorflow_cpu_gpu = "tensorflow-cpu" %}   # [cuda_compiler_version == "None" or cuda_compiler_version is undefined]
-  {% set tensorflow_cpu_gpu = "tensorflow-gpu" %}   # [cuda_compiler_version != "None"]
-  - name: {{ tensorflow_cpu_gpu }}
-    build:
-      string: cuda{{ cuda_compiler_version | replace('.', '') }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [cuda_compiler_version != "None"]
-      string: cpu_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}                                      # [cuda_compiler_version == "None"]
-      detect_binary_files_with_prefix: False
-    requirements:
-      run:
-        - {{ pin_subpackage("tensorflow", exact=True) }}
-    test:
-      imports:
-        - tensorflow
+        #- ./test_libtensorflow_cc.sh               # [not win and cuda_compiler_version == "None"]
 
 about:
   home: http://tensorflow.org/

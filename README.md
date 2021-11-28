@@ -35,192 +35,101 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_cuda_compiler_version10.2numpy1.18python3.7.____cpython</td>
+              <td>linux_64_cuda_compiler_version10.1cudnn7python3.7.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.2numpy1.18python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1cudnn7python3.7._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.2numpy1.18python3.8.____cpython</td>
+              <td>linux_64_cuda_compiler_version10.1cudnn7python3.8.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.2numpy1.18python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1cudnn7python3.8._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.2numpy1.19python3.9.____cpython</td>
+              <td>linux_64_cuda_compiler_version10.1cudnn7python3.9.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.2numpy1.19python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.1cudnn7python3.9._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version10.2numpy1.21python3.10.____cpython</td>
+              <td>linux_64_cuda_compiler_version11.3cudnn8python3.7.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version10.2numpy1.21python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.3cudnn8python3.7._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.0numpy1.18python3.7.____cpython</td>
+              <td>linux_64_cuda_compiler_version11.3cudnn8python3.8.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.0numpy1.18python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.3cudnn8python3.8._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.0numpy1.18python3.8.____cpython</td>
+              <td>linux_64_cuda_compiler_version11.3cudnn8python3.9.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.0numpy1.18python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.3cudnn8python3.9._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.0numpy1.19python3.9.____cpython</td>
+              <td>linux_64_cuda_compiler_versionNonecudnnundefinedpython3.7.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.0numpy1.19python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonecudnnundefinedpython3.7._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.0numpy1.21python3.10.____cpython</td>
+              <td>linux_64_cuda_compiler_versionNonecudnnundefinedpython3.8.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.0numpy1.21python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonecudnnundefinedpython3.8._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.1numpy1.18python3.7.____cpython</td>
+              <td>linux_64_cuda_compiler_versionNonecudnnundefinedpython3.9.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.1numpy1.18python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonecudnnundefinedpython3.9._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.1numpy1.18python3.8.____cpython</td>
+              <td>osx_64_python3.7.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.1numpy1.18python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.1numpy1.19python3.9.____cpython</td>
+              <td>osx_64_python3.8.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.1numpy1.19python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.1numpy1.21python3.10.____cpython</td>
+              <td>osx_64_python3.9.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.1numpy1.21python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.2numpy1.18python3.7.____cpython</td>
+              <td>osx_arm64_python3.8.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.2numpy1.18python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.8._" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cuda_compiler_version11.2numpy1.18python3.8.____cpython</td>
+              <td>osx_arm64_python3.9.</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.2numpy1.18python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_version11.2numpy1.19python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.2numpy1.19python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_version11.2numpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.2numpy1.21python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonenumpy1.18python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonenumpy1.18python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonenumpy1.18python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonenumpy1.18python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonenumpy1.19python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonenumpy1.19python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cuda_compiler_versionNonenumpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_versionNonenumpy1.21python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_numpy1.18python3.7.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_numpy1.18python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_numpy1.18python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_numpy1.18python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_numpy1.19python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_numpy1.19python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_numpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_numpy1.21python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_numpy1.19python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_numpy1.19python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_numpy1.19python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_numpy1.19python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_numpy1.21python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4385&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_numpy1.21python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tensorflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.9._" alt="variant">
                 </a>
               </td>
             </tr>
@@ -236,13 +145,9 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libtensorflow-green.svg)](https://anaconda.org/conda-forge/libtensorflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libtensorflow.svg)](https://anaconda.org/conda-forge/libtensorflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libtensorflow.svg)](https://anaconda.org/conda-forge/libtensorflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libtensorflow.svg)](https://anaconda.org/conda-forge/libtensorflow) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libtensorflow_cc-green.svg)](https://anaconda.org/conda-forge/libtensorflow_cc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libtensorflow_cc.svg)](https://anaconda.org/conda-forge/libtensorflow_cc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libtensorflow_cc.svg)](https://anaconda.org/conda-forge/libtensorflow_cc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libtensorflow_cc.svg)](https://anaconda.org/conda-forge/libtensorflow_cc) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tensorflow-green.svg)](https://anaconda.org/conda-forge/tensorflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tensorflow.svg)](https://anaconda.org/conda-forge/tensorflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tensorflow.svg)](https://anaconda.org/conda-forge/tensorflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tensorflow.svg)](https://anaconda.org/conda-forge/tensorflow) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tensorflow--base-green.svg)](https://anaconda.org/conda-forge/tensorflow-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tensorflow-base.svg)](https://anaconda.org/conda-forge/tensorflow-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tensorflow-base.svg)](https://anaconda.org/conda-forge/tensorflow-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tensorflow-base.svg)](https://anaconda.org/conda-forge/tensorflow-base) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tensorflow--cpu-green.svg)](https://anaconda.org/conda-forge/tensorflow-cpu) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tensorflow-cpu.svg)](https://anaconda.org/conda-forge/tensorflow-cpu) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tensorflow-cpu.svg)](https://anaconda.org/conda-forge/tensorflow-cpu) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tensorflow-cpu.svg)](https://anaconda.org/conda-forge/tensorflow-cpu) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tensorflow--estimator-green.svg)](https://anaconda.org/conda-forge/tensorflow-estimator) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tensorflow-estimator.svg)](https://anaconda.org/conda-forge/tensorflow-estimator) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tensorflow-estimator.svg)](https://anaconda.org/conda-forge/tensorflow-estimator) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tensorflow-estimator.svg)](https://anaconda.org/conda-forge/tensorflow-estimator) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tensorflow--gpu-green.svg)](https://anaconda.org/conda-forge/tensorflow-gpu) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tensorflow-gpu.svg)](https://anaconda.org/conda-forge/tensorflow-gpu) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tensorflow-gpu.svg)](https://anaconda.org/conda-forge/tensorflow-gpu) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tensorflow-gpu.svg)](https://anaconda.org/conda-forge/tensorflow-gpu) |
 
 Installing tensorflow
 =====================
@@ -254,16 +159,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libtensorflow, libtensorflow_cc, tensorflow, tensorflow-base, tensorflow-cpu, tensorflow-estimator, tensorflow-gpu` can be installed with:
+Once the `conda-forge` channel has been enabled, `libtensorflow_cc, tensorflow, tensorflow-estimator` can be installed with:
 
 ```
-conda install libtensorflow libtensorflow_cc tensorflow tensorflow-base tensorflow-cpu tensorflow-estimator tensorflow-gpu
+conda install libtensorflow_cc tensorflow tensorflow-estimator
 ```
 
-It is possible to list all of the versions of `libtensorflow` available on your platform with:
+It is possible to list all of the versions of `libtensorflow_cc` available on your platform with:
 
 ```
-conda search libtensorflow --channel conda-forge
+conda search libtensorflow_cc --channel conda-forge
 ```
 
 

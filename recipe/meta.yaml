@@ -19,7 +19,7 @@ source:
     folder: tensorflow-estimator
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -265,6 +265,7 @@ outputs:
         - {{ compiler('cuda') }}  # [cuda_compiler_version != "None"]
       # host requirements to pick up run_exports
       host:
+        - nccl                    # [cuda_compiler_version != "None"]
         - giflib
         #- grpc-cpp
         - abseil-cpp

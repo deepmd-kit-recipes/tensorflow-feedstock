@@ -1,5 +1,5 @@
 abseil_cpp:
-- '20210324.2'
+- '20211102.0'
 c_compiler:
 - gcc
 c_compiler_version:
@@ -13,15 +13,15 @@ channel_targets:
 cuda_compiler:
 - nvcc
 cuda_compiler_version:
-- '11.3'
+- None
 cudnn:
-- '8'
+- undefined
 cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '7'
 docker_image:
-- quay.io/condaforge/linux-anvil-cuda:11.3
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 giflib:
 - '5.2'
 icu:
@@ -35,13 +35,13 @@ libcurl:
 libpng:
 - '1.6'
 libprotobuf:
-- '3.14'
+- '3.20'
 nccl:
 - '2'
 numpy:
-- '1.20'
+- '1.21'
 openssl:
-- 1.1.1
+- 1.1.*
 pin_run_as_build:
   jpeg:
     max_pin: x

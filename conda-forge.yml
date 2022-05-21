@@ -1,3 +1,9 @@
+github:
+  user_or_org: deepmd-kit-recipes
+channels:
+  targets:
+    -
+      - deepmodeling
 build_platform:
   osx_arm64: osx_64
 conda_forge_output_validation: true

@@ -96,7 +96,7 @@ BUILD_OPTS="
 if [[ "${target_platform}" == "osx-arm64" ]]; then
   BUILD_OPTS="${BUILD_OPTS} --config=macos_arm64"
 fi
-export TF_ENABLE_XLA=0
+export TF_ENABLE_XLA=1
 export BUILD_TARGET="//tensorflow/tools/pip_package:build_pip_package //tensorflow:libtensorflow_cc.so"
 
 # Python settings
@@ -144,6 +144,8 @@ if [[ ${cuda_compiler_version} != "None" ]]; then
     elif [[ ${cuda_compiler_version} == 11.2 ]]; then
         export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
     elif [[ ${cuda_compiler_version} == 11.3 ]]; then
+        export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
+    elif [[ ${cuda_compiler_version} == 11.6 ]]; then
         export TF_CUDA_COMPUTE_CAPABILITIES=sm_35,sm_50,sm_60,sm_62,sm_70,sm_72,sm_75,sm_80,sm_86,compute_86
     else
         echo "unsupported cuda version."

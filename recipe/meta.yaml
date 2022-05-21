@@ -1,4 +1,4 @@
-{% set version = "2.7.0" %}
+{% set version = "2.9.0" %}
 
 package:
   name: tensorflow-split
@@ -6,20 +6,15 @@ package:
 
 source:
   - url: https://github.com/tensorflow/tensorflow/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: bb124905c7fdacd81e7c842b287c169bbf377d29c74c9dacc04f96c9793747bb
+    sha256: 8087cb0c529f04a4bfe480e49925cd64a904ad16d8ec66b98e2aacdfd53c80ff
     patches:
-      - patches/0001-relax-tolerence-in-special_math_test.patch
-      - patches/0002-skip-read-only-debugger_cli_common-test.patch
-      - patches/0003-relax-precision-in-matrix_log_op_test.patch
-      # requires setting GRPCIO_VERSION in build script
-      #- patches/0004-Fixup-requirements.patch
-      - patches/0005-Replace-deprecated-absl-Status-error_message-call-wi.patch
+      - patches/0001-fix-requirements.patch
   - url: https://github.com/tensorflow/estimator/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: e5164e802638d3cf110ecc17912be9d514a9d3354ec48e77200b9403dcc15965
+    sha256: 62d7b5a574d9c995542f6cb485ff1c18ad115afd9ec6d63437b2aab227c35ef6
     folder: tensorflow-estimator
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -30,8 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}                 # [cuda_compiler_version != "None"]
-    - bazel
-    - bazel >=4.2.1  # [osx and arm64]
+    - bazel >=4.2.2
     #- grpc-cpp
     - libprotobuf
     - nasm
@@ -77,9 +71,9 @@ requirements:
     - abseil-cpp
     # requirements specified by the package itself, see
     # github.com/tensorflow/tensorflow/blob/v{{ version }}/tensorflow/tools/pip_package/setup.py
-    - absl-py >=0.4.0
+    - absl-py >=1.0.0
     - astunparse >=1.6.0
-    - gast >=0.2.1,<0.5.0
+    - gast >=0.2.1,<=0.4.0
     - google-pasta >=0.1.1
     - h5py >=2.9.0
     - keras-preprocessing >=1.1.1
@@ -88,15 +82,16 @@ requirements:
     - protobuf >=3.9.2
     - python-flatbuffers >=1.12,<3
     - six >=1.12
-    - tensorflow-io-gcs-filesystem >=0.21.0
+    #- tensorflow-io-gcs-filesystem >=0.21.0
     - termcolor >=1.1.0
     - typing_extensions >=3.6.6
     - wheel >=0.32,<1
     - wrapt >=1.11.0
     # TF-API needs to move in sync
     # XXX: actually, TF 2.7.0 still demands tb 2.6
-    - tensorboard >=2.6,<2.7
-    - keras >=2.7,<2.8
+    - tensorboard >=2.9,<2.10
+    - keras >=2.9,<2.10
+    - packaging
 
 outputs:
   # as of tensorflow 2.7.0, we don't need tensorflow-base anymore;
@@ -164,15 +159,16 @@ outputs:
         - protobuf >=3.9.2
         - python-flatbuffers >=1.12,<3
         - six >=1.12
-        - tensorflow-io-gcs-filesystem >=0.21.0
+        #- tensorflow-io-gcs-filesystem >=0.21.0
         - termcolor >=1.1.0
         - typing_extensions >=3.6.6
         - wheel >=0.32,<1
         - wrapt >=1.11.0
         # TF-API needs to move in sync
         # XXX: actually, TF 2.7.0 still demands tb 2.6
-        - tensorboard >=2.6,<2.7
-        - keras >=2.7,<2.8
+        - tensorboard >=2.9,<2.10
+        - keras >=2.9,<2.10
+        - packaging
       run:
         - python
         - absl-py >=0.4.0
@@ -187,17 +183,18 @@ outputs:
         - protobuf >=3.9.2
         - python-flatbuffers >=1.12,<3
         - six >=1.12
-        - tensorflow-io-gcs-filesystem >=0.21.0
+        #- tensorflow-io-gcs-filesystem >=0.21.0
         - termcolor >=1.1.0
         - typing_extensions >=3.6.6
         - wheel >=0.32,<1
         - wrapt >=1.11.0
         # TF-API needs to move in sync
         # XXX: actually, TF 2.7.0 still demands tb 2.6
-        - tensorboard >=2.6,<2.7
-        - keras >=2.7,<2.8
+        - tensorboard >=2.9,<2.10
+        - keras >=2.9,<2.10
         # avoid that people without GPUs needlessly download ~0.5-1GB
         - __cuda  # [cuda_compiler_version != "None"]
+        - packaging
     test:
       files:
         - test_tensorflow.py
